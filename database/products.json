@@ -19,8 +19,8 @@
   },
   {
     "id": 5,
-    "title": "YARN DYED OFF-WHITE POLO",
-    "type": "Polo",
+    "title": "YARN DYED OFF-black",
+    "type": "T-Shirt",
     "fit": "Regular Fit",
     "colors": 1,
     "price": 4995,
@@ -28,11 +28,21 @@
   },
   {
     "id": 6,
-    "title": "DENIM JEANS - BLACK",
+    "title": "DENIM JEANS - Blue",
     "type": "Trouser",
     "fit": "Loose Fit",
     "colors": 1,
     "price": 5695,
-    "image": "https://thecambridgeshop.com/cdn/shop/files/DSC07491.jpg?v=1773396141&width=600"
+    "image": "https://thecambridgeshop.com/cdn/shop/files/7615.jpg?v=1776491923&width=600"
+  },
+  {
+    "id": 7,
+    "title": "Gray cotton T-Shirt",
+    "type": "T-Shirt",
+    "fit": "Regular Fit",
+    "colors": 1,
+    "price": 1234,
+    "image": "https://thecambridgeshop.com/cdn/shop/files/DSC07019.jpg?v=1776498091&width=600",
+    "gallery": []
   }
 ]

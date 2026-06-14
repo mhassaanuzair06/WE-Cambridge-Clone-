@@ -54,6 +54,26 @@ Copy this file and update if necessary:
 cp frontend/.env.example frontend/.env
 ```
 
+### Backend admin key
+
+The backend supports an optional `ADMIN_KEY` environment variable. When set, `POST`, `PUT` and `DELETE` API operations require the `x-admin-key` HTTP header to match the secret.
+
+Create a local copy for the backend and set a secure key:
+
+```bash
+cp backend/.env.example backend/.env
+# edit backend/.env and set ADMIN_KEY to a strong value
+```
+
+Example `curl` to create a product when `ADMIN_KEY` is set:
+
+```bash
+curl -X POST http://localhost:3001/api/products \
+	-H "Content-Type: application/json" \
+	-H "x-admin-key: YOUR_ADMIN_KEY" \
+	-d '{"title":"New item","type":"T-Shirt","price":1999,"image":"https://example.com/img.jpg"}'
+```
+
 ## GitHub Actions CI
 
 A GitHub Actions workflow is provided at `.github/workflows/nodejs.yml`.
