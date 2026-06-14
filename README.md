@@ -44,7 +44,14 @@ npm run dev
 
 Open the frontend at `http://localhost:5173`.
 
-The frontend uses `frontend/.env` to configure the API URL. If you need to run the backend on a different port, update `frontend/.env` accordingly.
+The frontend uses `frontend/.env` to configure the API URL and admin key. If you need to run the backend on a different port, update `frontend/.env` accordingly.
+
+For admin CRUD, set both variables in `frontend/.env`:
+
+```bash
+VITE_API_URL=http://localhost:3001/api/products
+VITE_ADMIN_KEY=YOUR_ADMIN_KEY
+```
 
 ## Environment Example
 

@@ -2,6 +2,7 @@ import React from "react";
 
 export const shopFile = (path) => `https://thecambridgeshop.com/cdn/shop/files/${path}`;
 export const API_URL = import.meta.env.VITE_API_URL || "/api/products";
+export const ADMIN_KEY = import.meta.env.VITE_ADMIN_KEY || "";
 
 export const seedProducts = [
   {

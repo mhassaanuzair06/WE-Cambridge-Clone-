@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { API_URL, money } from "../utils";
+import { API_URL, ADMIN_KEY, money } from "../utils";
 
 export default function AdminPage({ products, editingProduct, setEditingProduct, loadProducts }) {
   const blank = { title: "", type: "", fit: "", price: "", image: "" };
@@ -17,9 +17,11 @@ export default function AdminPage({ products, editingProduct, setEditingProduct,
     event.preventDefault();
     const payload = { title: form.title.trim(), type: form.type.trim(), fit: form.fit.trim(), price: Number(form.price), image: form.image.trim() };
     const url = editingProduct ? `${API_URL}/${editingProduct.id}` : API_URL;
+    const headers = { "Content-Type": "application/json" };
+    if (ADMIN_KEY) headers["x-admin-key"] = ADMIN_KEY;
     const response = await fetch(url, {
       method: editingProduct ? "PUT" : "POST",
-      headers: { "Content-Type": "application/json" },
+      headers,
       body: JSON.stringify(payload)
     });
     if (!response.ok) {
@@ -32,7 +34,9 @@ export default function AdminPage({ products, editingProduct, setEditingProduct,
   }
 
   async function deleteProduct(id) {
-    const response = await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+    const headers = {};
+    if (ADMIN_KEY) headers["x-admin-key"] = ADMIN_KEY;
+    const response = await fetch(`${API_URL}/${id}`, { method: "DELETE", headers });
     if (!response.ok) {
       alert("Product could not be deleted. Start the backend server first.");
       return;

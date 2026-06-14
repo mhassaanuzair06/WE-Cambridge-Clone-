@@ -66,7 +66,7 @@ function send(res, status, body, type = "application/json; charset=utf-8") {
     "Content-Type": type,
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type"
+    "Access-Control-Allow-Headers": "Content-Type, x-admin-key"
   });
   if (Buffer.isBuffer(body) || typeof body === "string") {
     res.end(body);
