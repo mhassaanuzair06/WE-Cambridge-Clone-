@@ -1,34 +1,66 @@
 # Cambridge Shop Website Replica
 
-This project clones the UI and basic shopping behavior of `https://thecambridgeshop.com/`.
+This project clones the UI and basic shopping experience of `https://thecambridgeshop.com/` using a React/Vite frontend and a simple Node.js backend.
 
-## Folder Structure
+## Repository Structure
 
-- `frontend/` contains HTML, CSS and JavaScript for the Cambridge-style storefront.
-- `backend/` contains a Node.js CRUD API and static file server.
-- `database/` contains the JSON database used by the app plus a MySQL-compatible schema.
+- `frontend/` - React + Vite storefront UI, product pages, cart and admin CRUD interface.
+- `backend/` - Node.js API and static file server for product CRUD operations.
+- `database/` - `products.json` holds product data and `schema.sql` provides a SQL-compatible schema example.
 
-## Working Features
+## Features
 
-- Home page with Cambridge-style announcement bar, sticky header, menu/sidebar and image sections.
-- Product listing page with one working category set, filter, sort, search and cart drawer.
-- Product detail page with gallery thumbnails, sizes, quantity controls and add to cart.
-- CRUD dashboard at `#admin` for product Create, Read, Update and Delete operations.
+- Responsive home page with announcement bar, navigation, hero sections and product cards.
+- Product listing with sort, category filter, search and cart drawer.
+- Product detail page with image gallery, quantity controls and add-to-cart actions.
+- Admin CRUD dashboard for adding, editing and deleting products via the backend API.
 
-## Run
+## Local Setup
+
+### Backend
 
 ```bash
 cd backend
+npm install
 npm start
 ```
 
-Open `http://localhost:3000`.
+Open the backend at `http://localhost:3000`.
 
-If port 3000 is already busy on your computer, run:
+If `3000` is occupied, start with another port:
 
 ```bash
 $env:PORT=3001
 npm start
 ```
 
-Then open `http://localhost:3001`.
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open the frontend at `http://localhost:5173`.
+
+The frontend uses `frontend/.env` to configure the API URL. If you need to run the backend on a different port, update `frontend/.env` accordingly.
+
+## Environment Example
+
+Copy this file and update if necessary:
+
+```bash
+cp frontend/.env.example frontend/.env
+```
+
+## GitHub Actions CI
+
+A GitHub Actions workflow is provided at `.github/workflows/nodejs.yml`.
+It installs backend and frontend dependencies, then builds the frontend to verify the project compiles successfully.
+
+## Notes
+
+- The backend stores product data in `database/products.json` and does not use a database server.
+- Do not commit sensitive values to `frontend/.env`.
+- This repo is configured for development and learning, not production deployment.
