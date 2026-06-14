@@ -8,6 +8,10 @@ frontend/dist/
 # Environment files
 .env
 frontend/.env
+backend/.env
+
+# Backups
+database/backups/
 
 # Logs
 npm-debug.log*
