@@ -23,7 +23,7 @@
     "type": "T-Shirt",
     "fit": "Regular Fit",
     "colors": 1,
-    "price": 4995,
+    "price": 2000,
     "image": "https://thecambridgeshop.com/cdn/shop/files/DSC02098a.jpg?v=1779183568&width=600"
   },
   {
@@ -32,7 +32,7 @@
     "type": "Trouser",
     "fit": "Loose Fit",
     "colors": 1,
-    "price": 5695,
+    "price": 5000,
     "image": "https://thecambridgeshop.com/cdn/shop/files/7615.jpg?v=1776491923&width=600"
   },
   {
@@ -41,8 +41,18 @@
     "type": "T-Shirt",
     "fit": "Regular Fit",
     "colors": 1,
-    "price": 1234,
+    "price": 2000,
     "image": "https://thecambridgeshop.com/cdn/shop/files/DSC07019.jpg?v=1776498091&width=600",
+    "gallery": []
+  },
+  {
+    "id": 8,
+    "title": "Lounge Wear Pants - Black",
+    "type": "Trouser",
+    "fit": "Regular Fit",
+    "colors": 1,
+    "price": 5000,
+    "image": "https://thecambridgeshop.com/cdn/shop/files/LOV25-01BLACK_2.jpg?v=1749506225&width=600",
     "gallery": []
   }
 ]
