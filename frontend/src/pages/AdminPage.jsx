@@ -25,7 +25,8 @@ export default function AdminPage({ products, editingProduct, setEditingProduct,
       body: JSON.stringify(payload)
     });
     if (!response.ok) {
-      alert("Product could not be saved. Start the backend server first.");
+      const errorText = await response.text();
+      alert(`Product could not be saved. ${response.status} ${errorText || "Start the backend server first."}`);
       return;
     }
     setEditingProduct(null);
@@ -38,7 +39,8 @@ export default function AdminPage({ products, editingProduct, setEditingProduct,
     if (ADMIN_KEY) headers["x-admin-key"] = ADMIN_KEY;
     const response = await fetch(`${API_URL}/${id}`, { method: "DELETE", headers });
     if (!response.ok) {
-      alert("Product could not be deleted. Start the backend server first.");
+      const errorText = await response.text();
+      alert(`Product could not be deleted. ${response.status} ${errorText || "Start the backend server first."}`);
       return;
     }
     await loadProducts();
